@@ -1,0 +1,269 @@
+/* Стили для формы обратной связи */
+.feedback-form {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #393e46;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #eeeeee;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #393e46;
+    border-radius: 8px;
+    background: #0f3460;
+    color: #eeeeee;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #00adb5;
+    box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2);
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #00adb5;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: #00adb5;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(135deg, #00adb5 0%, #009ca3 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+  }
+  
+  /* Стили для страницы входа */
+  .login-page {
+    background: url('../src/ctf-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .login-container {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(57, 62, 70, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .login-form-wrapper {
+    text-align: center;
+  }
+  
+  .login-title {
+    color: #00adb5;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .login-form {
+    text-align: left;
+  }
+  
+  .login-btn {
+    background: linear-gradient(135deg, #00adb5 0%, #009ca3 100%);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+  }
+  
+  .login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .login-links a {
+    color: #00adb5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .login-links a:hover {
+    color: #eeeeee;
+    text-decoration: underline;
+  }
+  
+  .remember-group {
+    margin-bottom: 0;
+  }
+  
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 768px) {
+    .feedback-form {
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .login-container {
+      padding: 2rem;
+      margin: 1rem;
+    }
+    
+    .radio-group {
+      gap: 0.3rem;
+    }
+    
+    .login-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+  .logo{
+    border-radius: 10px;
+    width: 50px;
+    float:left;
+  }
+  header {
+    background: darkblue;
+    color: greenyellow;
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 100;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  nav ul li a:hover{
+    background-color:greenyellow;
+    border:2px solid goldenrod;
+    border-radius: 10px;
+    cursor:pointer;
+    transition: 0.5s;
+    padding:5px 10px;
+    color:darkblue;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    background: darkblue;
+    color: greenyellow;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  .banner{
+    text-align: center;
+  }
+  .intro{
+    background-image: url('../src/Tema.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  .intro::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .box-banner{
+    position: relative;
+    z-index: 2;
+  }
