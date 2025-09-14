@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата курсов - CTF Проект</title>
+    <link rel="stylesheet" href="../style/payment.css">
+</head>
+<body>
+    <header>
+        <h1><img src="../src/logo.jpg" class="logo">Anakta CTF - Оплата</h1>
+        <nav>
+            <ul>
+                <li><a href="../pg/Index.html">Главная</a></li>
+        <li><a href="../pg/forum.html">Ресурсы</a></li>
+        <li><a href="../pg/about.html">О проекте</a></li>
+        <li><a href="../pg/journal.html">Журнал</a></li>
+        <li><a href="../pg/services.html">Курсы</a></li>
+        <li><a href="../pg/login.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <button class="back-button" onclick="window.location.href='services.html'">← Назад к курсам</button>
+        
+        <h2>Оплата выбранных курсов</h2>
+        
+        <div class="payment-container">
+            <div class="order-summary">
+                <h3>Ваш заказ</h3>
+                <ul id="selectedCoursesList" class="course-list">
+                    <!-- Сюда будут добавлены выбранные курсы через JavaScript -->
+                </ul>
+                <div class="total-amount">
+                    Итого: <span id="totalAmount">0</span> руб.
+                </div>
+            </div>
+            
+            <div class="payment-form">
+                <h3>Данные для оплаты</h3>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="cardNumber">Номер карты:</label>
+                        <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expiryDate">Срок действия:</label>
+                        <input type="text" id="expiryDate" placeholder="ММ/ГГ" maxlength="5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cvv">CVV код:</label>
+                        <input type="text" id="cvv" placeholder="000" maxlength="3" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardholder">Имя владельца:</label>
+                        <input type="text" id="cardholder" placeholder="IVAN IVANOV" required>
+                    </div>
+                    
+                    <button type="submit" class="pay-button">Оплатить</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="../script/payment.js"></script>
+    <footer>
+        <p>&copy; 2025 CTF-проект. Все права защищены.</p>
+    </footer>
+
+    <script src="../script/payment.js"></script>
+</body>
+</html>

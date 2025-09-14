@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Проект - Курсы</title>
+    <link rel="stylesheet" href="../style/services.css">
+    <link rel="icon" type="image/png" href="../src/logo.jpg">
+</head>
+<body>
+    <header>
+        <h1><img src="../src/logo.jpg" class="logo">Anakta CTF</h1>
+        <nav>
+            <ul>
+                <li><a href="../pg/Index.html">Главная</a></li>
+                <li><a href="../pg/forum.html">Ресурсы</a></li>
+                <li><a href="../pg/about.html">О проекте</a></li>
+                <li><a href="../pg/journal.html">Журнал</a></li>
+                <li><a href="../pg/services.html">Курсы</a></li>
+                <li><a href="../pg/login.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">IT-Курсы по информационной безопасности</h2>
+        
+        <div class="courses-container">
+            <div class="course-item">
+                <div class="course-title">Введение в CTF</div>
+                <div class="course-description">Базовый курс по Capture The Flag соревнованиям. Изучите основы криптографии, стеганографии и анализа сетевого трафика.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Введение в CTF', 'Базовый курс по Capture The Flag соревнованиям')">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="course-item">
+                <div class="course-title">Веб-уязвимости и пентестинг</div>
+                <div class="course-description">Изучите распространенные уязвимости веб-приложений, такие как SQL-инъекции, XSS, CSRF и методы их эксплуатации.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Веб-уязвимости и пентестинг', 'Изучите распространенные уязвимости веб-приложений')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item">
+                <div class="course-title">Обратная инженерия</div>
+                <div class="course-description">Курс по анализу и взлому программного обеспечения. Изучите ассемблер, дизассемблеры и отладчики.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Обратная инженерия', 'Курс по анализу и взлому программного обеспечения')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item">
+                <div class="course-title">Криптография для начинающих</div>
+                <div class="course-description">Основы шифрования, хэширования и криптоанализа. Практические задания по взлому шифров.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Криптография для начинающих', 'Основы шифрования, хэширования и криптоанализа')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item">
+                <div class="course-title">Форензика и анализ цифровых следов</div>
+                <div class="course-description">Методы исследования цифровых доказательств, анализ файловых систем и восстановление данных.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Форензика и анализ цифровых следов', 'Методы исследования цифровых доказательств')">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button id="payButton" onclick="proceedToPayment()" style="display: none;">
+                Перейти к оплате
+            </button>
+        </div>
+    </main>
+    <script src="../script/cart.js"></script>
+    <footer>
+        <p>&copy; 2025 CTF-проект. Все права защищены.</p>
+    </footer>
+</body>
+</html>
