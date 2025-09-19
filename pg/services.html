@@ -24,15 +24,36 @@
     <main>
         <h2 style="text-align: center;">IT-Курсы по информационной безопасности</h2>
         
+        <!-- Фильтры по категориям -->
+        <div class="filter-container">
+            <div class="filter-buttons">
+                <button class="filter-button active" data-category="all">Все курсы</button>
+                <button class="filter-button" data-category="beginner">Для начинающих</button>
+                <button class="filter-button" data-category="web">Веб-безопасность</button>
+                <button class="filter-button" data-category="reverse">Реверс-инжиниринг</button>
+                <button class="filter-button" data-category="crypto">Криптография</button>
+                <button class="filter-button" data-category="forensics">Киберфорензика</button>
+                <button class="filter-button" data-category="network">Сетевая безопасность</button>
+            </div>
+        </div>
+        
         <div class="courses-container">
-            <div class="course-item">
+            <!-- Существующие курсы с добавлением категорий -->
+            <div class="course-item" data-categories="beginner">
+                <div class="course-image">
+                    <img src="../src/CTF-Blog.jpg" alt="Введение в CTF" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0JLQstC10LTQuNGC0Ysg0LIgQ1RGPC90ZXh0Pjwvc3ZnPg=='">
+                </div>
                 <div class="course-title">Введение в CTF</div>
                 <div class="course-description">Базовый курс по Capture The Flag соревнованиям. Изучите основы криптографии, стеганографии и анализа сетевого трафика.</div>
                 <div class="course-actions">
                     <button class="add-button" onclick="addToCourse('Введение в CTF', 'Базовый курс по Capture The Flag соревнованиям')">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="course-item">
+            
+            <div class="course-item" data-categories="web">
+                <div class="course-image">
+                    <img src="../src/web-pentest.jpeg" alt="Веб-уязвимости и пентестинг" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0JLQstC10LQg0Y7Qt9Cw0LzRg9C20L3Ri9C5INC/0LXQvdGP0LbRg9C90YLQuNGHPC90ZXh0Pjwvc3ZnPg=='">
+                </div>
                 <div class="course-title">Веб-уязвимости и пентестинг</div>
                 <div class="course-description">Изучите распространенные уязвимости веб-приложений, такие как SQL-инъекции, XSS, CSRF и методы их эксплуатации.</div>
                 <div class="course-actions">
@@ -40,7 +61,10 @@
                 </div>
             </div>
             
-            <div class="course-item">
+            <div class="course-item" data-categories="reverse">
+                <div class="course-image">
+                    <img src="../src/Reverse-engineering.jpeg" alt="Обратная инженерия" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0J7QsdGA0LDRidCw0LXQvCDQuNC90LPQvtCz0L7RgNC40L3RjDwvdGV4dD48L3N2Zz4='">
+                </div>
                 <div class="course-title">Обратная инженерия</div>
                 <div class="course-description">Курс по анализу и взлому программного обеспечения. Изучите ассемблер, дизассемблеры и отладчики.</div>
                 <div class="course-actions">
@@ -48,7 +72,10 @@
                 </div>
             </div>
             
-            <div class="course-item">
+            <div class="course-item" data-categories="crypto beginner">
+                <div class="course-image">
+                    <img src="../src/Криптография.png" alt="Криптография для начинающих" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0JrRgNC40L3QtNC+0YfQvdC+0YHRgtGMINC00LIg0L3QtdC00L7RgdGC0LDQstC40YLRjDwvdGV4dD48L3N2Zz4='">
+                </div>
                 <div class="course-title">Криптография для начинающих</div>
                 <div class="course-description">Основы шифрования, хэширования и криптоанализа. Практические задания по взлому шифров.</div>
                 <div class="course-actions">
@@ -56,20 +83,103 @@
                 </div>
             </div>
             
-            <div class="course-item">
+            <div class="course-item" data-categories="forensics">
+                <div class="course-image">
+                    <img src="../src/Forenzika.png" alt="Форензика и анализ цифровых следов" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0KTRgNC10L3QtdC90LjRhyDQuCDQsNC90L3Ri9C5INC30LjRgdC90YvQuSDQstC70LXQtDwvdGV4dD48L3N2Zz4='">
+                </div>
                 <div class="course-title">Форензика и анализ цифровых следов</div>
                 <div class="course-description">Методы исследования цифровых доказательств, анализ файловых систем и восстановление данных.</div>
                 <div class="course-actions">
                     <button class="add-button" onclick="addToCourse('Форензика и анализ цифровых следов', 'Методы исследования цифровых доказательств')">Добавить в корзину</button>
                 </div>
             </div>
+            
+            <!-- Новые курсы -->
+            <div class="course-item" data-categories="network">
+                <div class="course-image">
+                    <img src="../src/web-analiz-pen.png" alt="Сетевой пентестинг и анализ трафика" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0KHQtdGC0LXQu9GMINC/0LXQvdGP0LbRg9C90YLQuNGHINC4INCw0L3QsdC70L7RgNGPINGC0YDQsNC20LjRh9C4PC90ZXh0Pjwvc3ZnPg=='">
+                </div>
+                <div class="course-title">Сетевой пентестинг и анализ трафика</div>
+                <div class="course-description">Изучите методы сканирования сетей, анализа пакетов и выявления уязвимостей в сетевой инфраструктуре.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Сетевой пентестинг и анализ трафика', 'Методы сканирования сетей и анализа пакетов')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="web">
+                <div class="course-image">
+                    <img src="../src/Exploits.jpg" alt="Продвинутые веб-эксплойты" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0J/RgNC+0LTQstC40L3QvtCy0LXQvdC90YvQtSDQstGN0YHQv9C+0YHQu9C10YI8L3RleHQ+PC9zdmc+'">
+                </div>
+                <div class="course-title">Продвинутые веб-эксплойты</div>
+                <div class="course-description">Углубленное изучение эксплуатации веб-уязвимостей, включая десериализацию, прототипное загрязнение и SSRF.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Продвинутые веб-эксплойты', 'Углубленное изучение эксплуатации веб-уязвимостей')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="reverse">
+                <div class="course-image">
+                    <img src="../src/analiz-po.jpg" alt="Анализ вредоносного ПО" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0JDQvdC90L7QuSDQstC10YDQu9C+0L3QsNC+0LzRgyDQv9C+PC90ZXh0Pjwvc3ZnPg=='">
+                </div>
+                <div class="course-title">Анализ вредоносного ПО</div>
+                <div class="course-description">Техники анализа малвари, обфускации кода и противодействия анти-отладке.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Анализ вредоносного ПО', 'Техники анализа малвари и обфускации кода')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="crypto">
+                <div class="course-image">
+                    <img src="../src/kripto.jpg" alt="Продвинутая криптография" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1iZGRsZSIgZHk9IjAuMzVlbSI+0J/RgNC+0LTQstC40L3QvtCy0LXQvdC90YvQtSDQutGA0LjQvdC00L7Rh9C90L7RgdGC0Yw8L3RleHQ+PC9zdmc+'">
+                </div>
+                <div class="course-title">Продвинутая криптография</div>
+                <div class="course-description">Изучение современных криптографических протоколов, атак на реализации и side-channel атак.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Продвинутая криптография', 'Изучение современных криптографических протоколов')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="forensics">
+                <div class="course-image">
+                    <img src="../src/Форензика.jpg" alt="Памятьная форензика" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0J/QsNC80YzRg9C20YbQuNGPINGE0L7RgNC80LXQvdGC0LjRh9CwPC90ZXh0Pjwvc3ZnPg=='">
+                </div>
+                <div class="course-title">Памятьная форензика</div>
+                <div class="course-description">Анализ дампов оперативной памяти для обнаружения следов взлома и вредоносной активности.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Памятьная форензика', 'Анализ дампов оперативной памяти')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="beginner">
+                <div class="course-image">
+                    <img src="../src/linux.jpeg" alt="Основы Linux для пентестеров" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0J7Qv9GA0LjQt9Cy0L7QtNGW0LIgTGludXgg0LTQviDQv9C10L3Rj9C20YPQvdGC0LjRgTwvdGV4dD48L3N2Zz4='">
+                </div>
+                <div class="course-title">Основы Linux для пентестеров</div>
+                <div class="course-description">Необходимые навыки работы с Linux, Bash-скрипты и инструменты для тестирования на проникновение.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Основы Linux для пентестеров', 'Необходимые навыки работы с Linux для пентестеров')">Добавить в корзину</button>
+                </div>
+            </div>
+            
+            <div class="course-item" data-categories="network">
+                <div class="course-image">
+                    <img src="../src/wep_wpa_wpa2_wpa3.jpg" alt="Безопасность беспроводных сетей" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuMzVlbSI+0JHQtdC30L7QvNC10L3QsNGPINCx0LXQv9C+0LvQvtC20LjRh9CwINC30YHQvtCx0YI8L3RleHQ+PC9zdmc+'">
+                </div>
+                <div class="course-title">Безопасность беспроводных сетей</div>
+                <div class="course-description">Методы взлома и защиты Wi-Fi сетей, анализ трафика и атаки на беспроводные протоколы.</div>
+                <div class="course-actions">
+                    <button class="add-button" onclick="addToCourse('Безопасность беспроводных сетей', 'Методы взлома и защиты Wi-Fi сетей')">Добавить в корзину</button>
+                </div>
+            </div>
         </div>
+        
         <div style="text-align: center; margin-top: 30px;">
             <button id="payButton" onclick="proceedToPayment()" style="display: none;">
                 Перейти к оплате
             </button>
         </div>
     </main>
+    
     <script src="../script/cart.js"></script>
     <footer>
         <p>&copy; 2025 CTF-проект. Все права защищены.</p>
