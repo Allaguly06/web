@@ -37,7 +37,7 @@ nav ul li a:hover {
 
 main {
   padding: 1rem;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -52,50 +52,6 @@ footer {
 a {
   color:black;
   text-decoration: none;
-}
-
-.banner {
-  text-align: center;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  gap:40px;
-  margin:10px;
-  align-items:center;
-}
-
-.box-topics {
-  border:2px solid black;
-  border-radius: 3%;
-  justify-content: center;
-  margin:2px;
-}
-
-.box-topics:hover {
-  background-color: darkblue;
-  color:greenyellow;
-  border:2px solid greenyellow;
-  transition: 0.5s;
-}
-
-.box-img {
-  width: 100%;
-  height: 100%;
-}
-
-.img {
-  border-radius: 3%;
-  width: 100%;
-  height: 100%;
-}
-
-.box-txt {
-  font-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  padding:5px;
 }
 
 .logo {
@@ -113,84 +69,6 @@ nav ul li a:hover {
   padding:5px 10px;
   color:darkblue;
   text-decoration: none;
-}
-
-.courses-container {
-  margin: 20px 0;
-}
-
-.course-item {
-  background: #f5f5f5;
-  border-left: 4px solid darkblue;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.course-item:hover {
-  background: #e9e9e9;
-  transform: translateX(5px);
-}
-
-.course-title {
-  font-weight: bold;
-  color: darkblue;
-  margin-bottom: 5px;
-}
-
-.course-description {
-  color: #555;
-  font-size: 0.9rem;
-}
-
-.add-button {
-  background: darkblue;
-  color: greenyellow;
-  border: 2px solid greenyellow;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.add-button:hover {
-  background: greenyellow;
-  color: darkblue;
-}
-
-#payButton {
-  background: darkblue;
-  color: greenyellow;
-  border: 2px solid greenyellow;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-#payButton:hover {
-  background: greenyellow;
-  color: darkblue;
-}
-
-.add-button {
-  background: darkblue;
-  color: greenyellow;
-  border: 2px solid greenyellow;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.add-button:hover {
-  background: greenyellow;
-  color: darkblue;
 }
 
 /* Стили для фильтрации */
@@ -226,21 +104,7 @@ nav ul li a:hover {
   border-color: greenyellow;
 }
 
-/* Анимация появления/скрытия курсов */
-.course-item {
-  transition: all 0.3s ease;
-}
-
-.course-item.hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  height: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-/* ... предыдущие стили остаются без изменений ... */
-
+/* Стили для контейнера курсов */
 .courses-container {
   margin: 20px 0;
   display: grid;
@@ -299,7 +163,69 @@ nav ul li a:hover {
 
 .course-actions {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
+.add-button {
+  background: darkblue;
+  color: greenyellow;
+  border: 2px solid greenyellow;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background: greenyellow;
+  color: darkblue;
+}
+
+.recommend-button {
+  background: #ff9800;
+  color: white;
+  border: 2px solid #ff9800;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.recommend-button:hover {
+  background: #e68900;
+  border-color: #e68900;
+}
+
+#payButton {
+  background: darkblue;
+  color: greenyellow;
+  border: 2px solid greenyellow;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#payButton:hover {
+  background: greenyellow;
+  color: darkblue;
+}
+
+/* Анимация появления/скрытия курсов */
+.course-item.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 /* Стили для уведомлений */
 .notification {
   position: fixed;
@@ -341,11 +267,159 @@ nav ul li a:hover {
   }
 }
 
-/* Адаптивность для модального окна */
+/* Стили для модального окна корзины */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-actions {
+  text-align: right;
+  margin-left: 15px;
+}
+
+.cart-total {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border-top: 2px solid #ddd;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cart-button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.cart-button-secondary {
+  background: #ccc;
+}
+
+.cart-button-primary {
+  background: darkblue;
+  color: white;
+}
+
+.cart-button-primary:hover {
+  background: #000080;
+}
+
+/* Стили для блока рекомендаций */
+.recommendations-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.recommendations-container h3 {
+  margin-top: 0;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.recommendation-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.add-all-button {
+  background: #4CAF50;
+  color: white;
+  border: 2px solid #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.add-all-button:hover {
+  background: #45a049;
+  border-color: #45a049;
+}
+
+.close-recommendations {
+  background: #f44336;
+  color: white;
+  border: 2px solid #f44336;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.close-recommendations:hover {
+  background: #da190b;
+  border-color: #da190b;
+}
+
+/* Адаптивность */
 @media (max-width: 600px) {
-  #cartModal > div {
-      width: 95% !important;
-      margin: 10px;
+  .courses-container {
+      grid-template-columns: 1fr;
   }
   
   .filter-buttons {
@@ -356,5 +430,170 @@ nav ul li a:hover {
   .filter-button {
       margin-bottom: 5px;
       width: 200px;
+  }
+  
+  .modal-content {
+      width: 95%;
+      margin: 10px;
+  }
+  
+  .recommendation-actions {
+      flex-direction: column;
+  }
+  
+  .course-actions {
+      flex-direction: column;
+  }
+}
+/* Стили для расширенной панели фильтров */
+.filter-panel {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-section h3 {
+  margin-top: 0;
+  color: darkblue;
+  margin-bottom: 15px;
+}
+
+.advanced-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  font-size: 14px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 14px;
+}
+
+.clear-filters {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.clear-filters:hover {
+  background: #5a6268;
+}
+
+/* Счетчик курсов */
+.courses-counter {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Бейджи для курсов */
+.course-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
+.course-badge.beginner {
+  background: #28a745;
+}
+
+.course-badge.intermediate {
+  background: #ffc107;
+  color: #000;
+}
+
+.course-badge.advanced {
+  background: #dc3545;
+}
+
+/* Мета-информация курса */
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.course-price {
+  font-weight: bold;
+  color: darkblue;
+  font-size: 1rem;
+}
+
+.course-duration, .course-rating {
+  font-size: 0.8rem;
+}
+
+/* Адаптивность для фильтров */
+@media (max-width: 768px) {
+  .advanced-filters {
+      grid-template-columns: 1fr;
+  }
+  
+  .search-container {
+      flex-direction: column;
+  }
+  
+  #searchInput {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons {
+      flex-direction: column;
+      align-items: stretch;
+  }
+  
+  .filter-button {
+      margin-bottom: 5px;
+      text-align: center;
   }
 }
