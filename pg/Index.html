@@ -4,233 +4,311 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CTF Проект</title>
-  <link rel="stylesheet" href="../style/style.css">
-  <link rel="icon" type="image/png" href="../src/logo.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-</head> 
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="icon" type="image/png" href="../src/logo.jpg">
+</head>
 <body>
-  <header>
-    <h1> <img src="../src/logo.jpg" class="logo">Anakta CTF</h1>
-    <nav>
-      <ul>
-        <li><a href="../pg/Index.html">Главная</a></li>
-        <li><a href="../pg/forum.html">Ресурсы</a></li>
-        <li><a href="../pg/about.html">О проекте</a></li>
-        <li><a href="../pg/journal.html">Журнал</a></li>
-        <li><a href="../pg/services.html">Курсы</a></li>
-        <li><a href="../pg/orders.html">Мои заказы</a></li>
-        <li><a href="../pg/login.html">Вход</a></li>
-      </ul>
-    </nav>
+  <!-- Header -->
+  <header class="bg-primary text-warning sticky-top">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <h1 class="h3 mb-0 d-flex align-items-center">
+            <img src="../src/logo.jpg" class="logo me-3" alt="Logo">
+            Anakta CTF
+          </h1>
+        </div>
+        <div class="col-md-6">
+          <nav>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/Index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/forum.html">Ресурсы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/about.html">О проекте</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/journal.html">Журнал</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/services.html">Курсы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/orders.html">Мои заказы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="../pg/login.html">Вход</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
-  <main>
-    <section class="intro">
-      <div class="box-banner">
-        <h2 class="banner">Добро пожаловать на сайт CTF-проекта!</h2>
-        <p>Здесь вы найдете информацию о целях проекта, участниках, прогрессе и полезных материалах для изучения CTF-задач.</p>
+
+  <main class="container my-4">
+    <!-- Hero Section -->
+    <section class="intro rounded-3 mb-5">
+      <div class="box-banner text-white p-5 rounded-3">
+        <h2 class="banner display-4 fw-bold mb-4">Добро пожаловать на сайт CTF-проекта!</h2>
+        <p class="lead fs-4">Здесь вы найдете информацию о целях проекта, участниках, прогрессе и полезных материалах для изучения CTF-задач.</p>
       </div>
     </section>
-    <div class="box-about">
-      <div class="box-txt">
-        <h3>Статьи от нашей команды</h3>
-        <p>
-          Добро пожаловать на наш проект, 
-          посвящённый информационной безопасности и CTF-соревнованиям!
-          Здесь мы, команда CTF из Московского Политеха, 
-          собрали и структурировали наш опыт, исследования и 
-          обучающие материалы, которые помогут новичкам и 
-          практикующим специалистам развиваться в сфере кибербезопасности.
-          Наша цель — помогать, обучать и делиться. 
-          Мы стремимся сделать вход в мир CTF понятным и увлекательным, 
-          а освоение сложных техник — доступным каждому, кто готов учиться.
-        </p>
-        <h3>Что вы найдёте в проекте:</h3>
-        <p>
-          Раздел для тех, кто только начинает. 
-          Объясняем базовые понятия, подходы к решению задач, 
-          рассказываем, с чего начать и как не испугаться первых заданий.<br/>
-          <b>Криптография</b><br>
-          Анализируем шифры, разбираем атаки на криптосистемы, 
-          включая современные подходы и уязвимости, основанные 
-          на эллиптических кривых (ECC).<br/>
-          <b>Веб-безопасность (Web)</b><br/>
-          От введения в веб-технологии до глубокого изучения уязвимостей: 
-          XSS, SQL-инъекций, XXE, JWT, GraphQL, Web API и многое другое. 
-          Мы делаем упор на практику — примеры, атаки, защиты.<br/>
-          <b>OSINT и Георазведка (GeoINT)</b><br/>
-          Изучаем методы получения информации из открытых источников, 
-          включая работу с Google Dorks, карты, соцсети, 
-          анализ изображений и метаданных.<br/>
-          <b> Реверс-инжиниринг, PWN, Forensics, Misc</b><br/>
-          Разбираем память, бинарные файлы, процессоры, файловые системы. 
-          Пишем эксплойты, обходим ASLR, анализируем дампы, 
-          логи и даже скрытые данные в сетевом трафике.<br/>
-        </p>
-        <h3>Кто мы?</h3>
-        <p>
-          Мы — CTF-команда Московского Политеха. 
-          Участвуем в соревнованиях, обучаем новых участников, 
-          проводим разборы задач и активно развиваемся в сообществе.
-          Наша миссия — объединять знания и делиться ими, 
-          чтобы сделать мир кибербезопасности более доступным.<br/>
-          <a href="../html/about.html"><button>Список тем.</button></a>
-        </p>
+
+    <!-- About Section -->
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <div class="box-txt">
+          <h3 class="text-center mb-4">Статьи от нашей команды</h3>
+          <p class="mb-4">
+            Добро пожаловать на наш проект, 
+            посвящённый информационной безопасности и CTF-соревнованиям!
+            Здесь мы, команда CTF из Московского Политеха, 
+            собрали и структурировали наш опыт, исследования и 
+            обучающие материалы, которые помогут новичкам и 
+            практикующим специалистам развиваться в сфере кибербезопасности.
+            Наша цель — помогать, обучать и делиться. 
+            Мы стремимся сделать вход в мир CTF понятным и увлекательным, 
+            а освоение сложных техник — доступным каждому, кто готов учиться.
+          </p>
+          
+          <h3 class="text-center mb-4">Что вы найдёте в проекте:</h3>
+          <p class="mb-4">
+            Раздел для тех, кто только начинает. 
+            Объясняем базовые понятия, подходы к решению задач, 
+            рассказываем, с чего начать и как не испугаться первых заданий.
+          </p>
+          
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">Криптография</h5>
+                  <p class="card-text">Анализируем шифры, разбираем атаки на криптосистемы, 
+                  включая современные подходы и уязвимости, основанные 
+                  на эллиптических кривых (ECC).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">Веб-безопасность (Web)</h5>
+                  <p class="card-text">От введения в веб-технологии до глубокого изучения уязвимостей: 
+                  XSS, SQL-инъекций, XXE, JWT, GraphQL, Web API и многое другое.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">OSINT и Георазведка</h5>
+                  <p class="card-text">Изучаем методы получения информации из открытых источников, 
+                  включая работу с Google Dorks, карты, соцсети, 
+                  анализ изображений и метаданных.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">Реверс-инжиниринг, PWN, Forensics</h5>
+                  <p class="card-text">Разбираем память, бинарные файлы, процессоры, файловые системы. 
+                  Пишем эксплойты, обходим ASLR, анализируем дампы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-center mb-4">Кто мы?</h3>
+          <p class="mb-4">
+            Мы — CTF-команда Московского Политеха. 
+            Участвуем в соревнованиях, обучаем новых участников, 
+            проводим разборы задач и активно развиваемся в сообществе.
+            Наша миссия — объединять знания и делиться ими, 
+            чтобы сделать мир кибербезопасности более доступным.
+          </p>
+        </div>
       </div>
-      <div class="box-img">
-        <img src="../src/ctf.jpg" class="img">
-        <img src="../src/CTF-Blog.jpg" class="img">
+      <div class="col-lg-4">
+        <div class="box-img">
+          <img src="../src/ctf.jpg" class="img-fluid rounded-3 mb-3" alt="CTF">
+          <img src="../src/CTF-Blog.jpg" class="img-fluid rounded-3" alt="CTF Blog">
+        </div>
       </div>
     </div>
+
+    <!-- Tables Section -->
     <div class="box-video">
-            <div class="table-container">
-              <h3>Категории CTF-задач</h3>
-              <table class="ctf-table">
-                <thead>
-                  <tr>
-                    <th>Категория</th>
-                    <th>Описание</th>
-                    <th>Сложность</th>
-                    <th>Популярные инструменты</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Web</td>
-                    <td>Веб-уязвимости, инъекции, XSS, CSRF</td>
-                    <td>Начинающий-Продвинутый</td>
-                    <td>Burp Suite, OWASP ZAP, Browser DevTools</td>
-                  </tr>
-                  <tr>
-                    <td>Crypto</td>
-                    <td>Криптография, шифры, RSA, AES</td>
-                    <td>Средний-Эксперт</td>
-                    <td>Python, RsaCtfTool, CyberChef</td>
-                  </tr>
-                  <tr>
-                    <td>Forensics</td>
-                    <td>Анализ файлов, сетевого трафика, восстановление данных</td>
-                    <td>Средний</td>
-                    <td>Wireshark, Binwalk, Autopsy</td>
-                  </tr>
-                  <tr>
-                    <td>Pwn</td>
-                    <td>Эксплуатация бинарных уязвимостей, переполнение буфера</td>
-                    <td>Продвинутый-Эксперт</td>
-                    <td>GDB, Pwntools, Radare2</td>
-                  </tr>
-                  <tr>
-                    <td>Reverse</td>
-                    <td>Реверс-инжиниринг, анализ малвари</td>
-                    <td>Продвинутый-Эксперт</td>
-                    <td>IDA Pro, Ghidra, x64dbg</td>
-                  </tr>
-                  <tr>
-                    <td>OSINT</td>
-                    <td>Разведка на основе открытых источников</td>
-                    <td>Начинающий-Средний</td>
-                    <td>Google Dorks, Maltego, Shodan</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <div class="table-container">
-              <h3>Топ CTF-соревнований 2025</h3>
-              <table class="ctf-table">
-                <thead>
-                  <tr>
-                    <th>Название</th>
-                    <th>Формат</th>
-                    <th>Дата проведения</th>
-                    <th>Уровень сложности</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>DEF CON CTF</td>
-                    <td>Attack-Defense</td>
-                    <td>Август 2025</td>
-                    <td>Эксперт</td>
-                  </tr>
-                  <tr>
-                    <td>Google CTF</td>
-                    <td>Jeopardy</td>
-                    <td>Июнь 2025</td>
-                    <td>Продвинутый</td>
-                  </tr>
-                  <tr>
-                    <td>RuCTF</td>
-                    <td>Attack-Defense</td>
-                    <td>Октябрь 2025</td>
-                    <td>Средний-Продвинутый</td>
-                  </tr>
-                  <tr>
-                    <td>HackTheBox CTF</td>
-                    <td>Jeopardy</td>
-                    <td>Круглогодично</td>
-                    <td>Все уровни</td>
-                  </tr>
-                  <tr>
-                    <td>PicoCTF</td>
-                    <td>Jeopardy</td>
-                    <td>Март 2025</td>
-                    <td>Начинающий-Средний</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <div class="table-container">
-              <h3>Рекомендуемые ресурсы для обучения</h3>
-              <table class="ctf-table">
-                <thead>
-                  <tr>
-                    <th>Ресурс</th>
-                    <th>Тип</th>
-                    <th>Целевая аудитория</th>
-                    <th>Ссылка</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>CTFlearn</td>
-                    <td>Платформа с задачами</td>
-                    <td>Начинающие-Продвинутые</td>
-                    <td>ctflearn.com</td>
-                  </tr>
-                  <tr>
-                    <td>OverTheWire</td>
-                    <td>WarGames</td>
-                    <td>Начинающие</td>
-                    <td>overthewire.org</td>
-                  </tr>
-                  <tr>
-                    <td>HackTheBox</td>
-                    <td>Платформа с задачами</td>
-                    <td>Средние-Эксперты</td>
-                    <td>hackthebox.com</td>
-                  </tr>
-                  <tr>
-                    <td>LiveOverflow</td>
-                    <td>YouTube канал</td>
-                    <td>Все уровни</td>
-                    <td>youtube.com/c/LiveOverflow</td>
-                  </tr>
-                  <tr>
-                    <td>CTF Field Guide</td>
-                    <td>Книга/Руководство</td>
-                    <td>Начинающие</td>
-                    <td>trailofbits.github.io/ctf</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+      <!-- Categories Table -->
+      <div class="table-container mb-5">
+        <h3 class="text-center mb-4">Категории CTF-задач</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover ctf-table">
+            <thead class="table-dark">
+              <tr>
+                <th>Категория</th>
+                <th>Описание</th>
+                <th>Сложность</th>
+                <th>Популярные инструменты</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Web</td>
+                <td>Веб-уязвимости, инъекции, XSS, CSRF</td>
+                <td>Начинающий-Продвинутый</td>
+                <td>Burp Suite, OWASP ZAP, Browser DevTools</td>
+              </tr>
+              <tr>
+                <td>Crypto</td>
+                <td>Криптография, шифры, RSA, AES</td>
+                <td>Средний-Эксперт</td>
+                <td>Python, RsaCtfTool, CyberChef</td>
+              </tr>
+              <tr>
+                <td>Forensics</td>
+                <td>Анализ файлов, сетевого трафика, восстановление данных</td>
+                <td>Средний</td>
+                <td>Wireshark, Binwalk, Autopsy</td>
+              </tr>
+              <tr>
+                <td>Pwn</td>
+                <td>Эксплуатация бинарных уязвимостей, переполнение буфера</td>
+                <td>Продвинутый-Эксперт</td>
+                <td>GDB, Pwntools, Radare2</td>
+              </tr>
+              <tr>
+                <td>Reverse</td>
+                <td>Реверс-инжиниринг, анализ малвари</td>
+                <td>Продвинутый-Эксперт</td>
+                <td>IDA Pro, Ghidra, x64dbg</td>
+              </tr>
+              <tr>
+                <td>OSINT</td>
+                <td>Разведка на основе открытых источников</td>
+                <td>Начинающий-Средний</td>
+                <td>Google Dorks, Maltego, Shodan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Competitions Table -->
+      <div class="table-container mb-5">
+        <h3 class="text-center mb-4">Топ CTF-соревнований 2025</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover ctf-table">
+            <thead class="table-dark">
+              <tr>
+                <th>Название</th>
+                <th>Формат</th>
+                <th>Дата проведения</th>
+                <th>Уровень сложности</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>DEF CON CTF</td>
+                <td>Attack-Defense</td>
+                <td>Август 2025</td>
+                <td>Эксперт</td>
+              </tr>
+              <tr>
+                <td>Google CTF</td>
+                <td>Jeopardy</td>
+                <td>Июнь 2025</td>
+                <td>Продвинутый</td>
+              </tr>
+              <tr>
+                <td>RuCTF</td>
+                <td>Attack-Defense</td>
+                <td>Октябрь 2025</td>
+                <td>Средний-Продвинутый</td>
+              </tr>
+              <tr>
+                <td>HackTheBox CTF</td>
+                <td>Jeopardy</td>
+                <td>Круглогодично</td>
+                <td>Все уровни</td>
+              </tr>
+              <tr>
+                <td>PicoCTF</td>
+                <td>Jeopardy</td>
+                <td>Март 2025</td>
+                <td>Начинающий-Средний</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Resources Table -->
+      <div class="table-container mb-5">
+        <h3 class="text-center mb-4">Рекомендуемые ресурсы для обучения</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover ctf-table">
+            <thead class="table-dark">
+              <tr>
+                <th>Ресурс</th>
+                <th>Тип</th>
+                <th>Целевая аудитория</th>
+                <th>Ссылка</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CTFlearn</td>
+                <td>Платформа с задачами</td>
+                <td>Начинающие-Продвинутые</td>
+                <td>ctflearn.com</td>
+              </tr>
+              <tr>
+                <td>OverTheWire</td>
+                <td>WarGames</td>
+                <td>Начинающие</td>
+                <td>overthewire.org</td>
+              </tr>
+              <tr>
+                <td>HackTheBox</td>
+                <td>Платформа с задачами</td>
+                <td>Средние-Эксперты</td>
+                <td>hackthebox.com</td>
+              </tr>
+              <tr>
+                <td>LiveOverflow</td>
+                <td>YouTube канал</td>
+                <td>Все уровни</td>
+                <td>youtube.com/c/LiveOverflow</td>
+              </tr>
+              <tr>
+                <td>CTF Field Guide</td>
+                <td>Книга/Руководство</td>
+                <td>Начинающие</td>
+                <td>trailofbits.github.io/ctf</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </main>
-  <footer>
-    <p>&copy; 2025 CTF-проект. Все права защищены.</p>
+
+  <footer class="bg-primary text-warning text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 CTF-проект. Все права защищены.</p>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
