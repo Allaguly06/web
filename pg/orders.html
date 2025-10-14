@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заказы - CTF Проект</title>
+    <link rel="stylesheet" href="../style/services.css">
+    <link rel="stylesheet" href="../style/orders.css">
+    <link rel="icon" type="image/png" href="../src/logo.jpg">
+</head>
+<body>
+    <header>
+        <h1><img src="../src/logo.jpg" class="logo">Anakta CTF - Мои заказы</h1>
+        <nav>
+            <ul>
+                <li><a href="../pg/Index.html">Главная</a></li>
+                <li><a href="../pg/forum.html">Ресурсы</a></li>
+                <li><a href="../pg/about.html">О проекте</a></li>
+                <li><a href="../pg/journal.html">Журнал</a></li>
+                <li><a href="../pg/services.html">Курсы</a></li>
+                <li><a href="../pg/orders.html">Мои заказы</a></li>
+                <li><a href="../pg/login.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2 style="text-align: center;">История моих заказов</h2>
+        
+        <div class="orders-container">
+            <div class="table-responsive">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата заказа</th>
+                            <th>Состав заказа</th>
+                            <th>Стоимость</th>
+                            <th>Доставка</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Заказы будут загружены через JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="emptyOrders" class="empty-orders" style="display: none;">
+                <div class="empty-state">
+                    <h3>🛒 У вас пока нет заказов</h3>
+                    <p>Перейдите на страницу курсов, чтобы выбрать и оплатить интересующие вас материалы</p>
+                    <button onclick="window.location.href='services.html'" class="browse-courses-btn">
+                        Перейти к курсам
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальное окно подробной информации -->
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔍 Детали заказа</h2>
+                <button class="close-button" onclick="closeModal('orderDetailsModal')">×</button>
+            </div>
+            <div id="orderDetailsContent" class="modal-body">
+                <!-- Контент будет заполнен через JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-primary" onclick="closeModal('orderDetailsModal')">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно редактирования -->
+    <div id="editOrderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✏️ Редактирование заказа</h2>
+                <button class="close-button" onclick="closeModal('editOrderModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="editOrderForm">
+                    <div class="form-group">
+                        <label for="editFullName">ФИО:</label>
+                        <input type="text" id="editFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email:</label>
+                        <input type="email" id="editEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhone">Телефон:</label>
+                        <input type="tel" id="editPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDeliveryAddress">Адрес доставки материалов:</label>
+                        <input type="text" id="editDeliveryAddress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDeliveryType">Способ получения:</label>
+                        <select id="editDeliveryType" required>
+                            <option value="online">Онлайн доступ</option>
+                            <option value="email">Email рассылка</option>
+                            <option value="courier">Курьерская доставка</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDeliveryTime">Время доставки:</label>
+                        <input type="datetime-local" id="editDeliveryTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="editComment">Комментарий:</label>
+                        <textarea id="editComment" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal('editOrderModal')">Отмена</button>
+                <button class="modal-btn modal-btn-primary" onclick="saveOrderChanges()">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно подтверждения удаления -->
+    <div id="deleteOrderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🗑️ Удаление заказа</h2>
+                <button class="close-button" onclick="closeModal('deleteOrderModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены, что хотите удалить этот заказ?</p>
+                <p class="warning-text">Это действие нельзя отменить!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal('deleteOrderModal')">Отмена</button>
+                <button class="modal-btn modal-btn-danger" onclick="confirmDeleteOrder()">Да, удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CTF-проект. Все права защищены.</p>
+    </footer>
+
+    <script src="../script/orders.js"></script>
+</body>
+</html>

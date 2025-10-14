@@ -1,0 +1,523 @@
+/* orders.css - стили для страницы заказов (табличный вариант) */
+
+.orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+}
+
+.orders-table th {
+    background: darkblue;
+    color: greenyellow;
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: bold;
+    border: none;
+    position: sticky;
+    top: 0;
+}
+
+.orders-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.orders-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.orders-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.orders-table tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.orders-table tbody tr:nth-child(even):hover {
+    background: #f1f3f4;
+}
+
+/* Стили для ячеек таблицы */
+.order-number {
+    font-weight: bold;
+    color: darkblue;
+    font-size: 0.9rem;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.order-courses {
+    color: #333;
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+.order-courses-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.order-courses-list li {
+    margin-bottom: 4px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.order-courses-list li:before {
+    content: "•";
+    color: darkblue;
+    position: absolute;
+    left: 0;
+}
+
+.order-total {
+    font-weight: bold;
+    color: darkblue;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.order-delivery {
+    color: #666;
+    font-size: 0.85rem;
+    max-width: 150px;
+}
+
+.order-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 70px;
+}
+
+.status-paid {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.status-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Стили для действий */
+.order-actions {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 32px;
+    height: 28px;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-details {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-details:hover {
+    background: #138496;
+}
+
+.btn-edit {
+    background: #ffc107;
+    color: black;
+}
+
+.btn-edit:hover {
+    background: #e0a800;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Иконки для кнопок */
+.action-btn i {
+    font-size: 12px;
+}
+
+.empty-orders {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.empty-state h3 {
+    color: darkblue;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.browse-courses-btn {
+    background: darkblue;
+    color: greenyellow;
+    border: 2px solid greenyellow;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.browse-courses-btn:hover {
+    background: greenyellow;
+    color: darkblue;
+}
+
+/* Стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: darkblue;
+    color: greenyellow;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: greenyellow;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    color: white;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.modal-btn-primary {
+    background: darkblue;
+    color: greenyellow;
+    border: 2px solid greenyellow;
+}
+
+.modal-btn-primary:hover {
+    background: greenyellow;
+    color: darkblue;
+}
+
+.modal-btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.modal-btn-secondary:hover {
+    background: #5a6268;
+}
+
+.modal-btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.modal-btn-danger:hover {
+    background: #c82333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.warning-text {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+}
+
+.course-item-detail {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.course-item-detail:last-child {
+    border-bottom: none;
+}
+
+.course-name {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.course-price {
+    color: darkblue;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.order-summary-details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.order-total-details {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: darkblue;
+    text-align: right;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+}
+
+/* Адаптивность для таблицы */
+@media (max-width: 1024px) {
+    .orders-table {
+        font-size: 13px;
+    }
+    
+    .orders-table th,
+    .orders-table td {
+        padding: 10px 8px;
+    }
+    
+    .order-courses {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .orders-container {
+        padding: 10px;
+    }
+    
+    .orders-table {
+        font-size: 12px;
+    }
+    
+    .orders-table th,
+    .orders-table td {
+        padding: 8px 6px;
+    }
+    
+    .action-btn {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+        min-width: 28px;
+        height: 24px;
+    }
+    
+    .order-courses {
+        max-width: 150px;
+    }
+    
+    .order-status {
+        font-size: 0.7rem;
+        min-width: 60px;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-responsive {
+        border: 1px solid #ddd;
+    }
+    
+    .orders-table thead {
+        display: none;
+    }
+    
+    .orders-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        background: white;
+    }
+    
+    .orders-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .orders-table tbody td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: darkblue;
+        margin-right: 10px;
+        flex: 0 0 100px;
+    }
+    
+    .orders-table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .order-actions {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .order-actions td:before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-btn {
+        width: 100%;
+    }
+    
+    .empty-orders {
+        padding: 40px 15px;
+    }
+}
